@@ -73,3 +73,9 @@ const store = createStore(counterReducer);
         dispatch()
         subscribe()
 */
+
+// subscribe to store
+store.subscribe(() => {
+  const stateObj = store.getState();
+  console.log(stateObj);
+});
