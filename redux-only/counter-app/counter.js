@@ -79,3 +79,13 @@ store.subscribe(() => {
   const stateObj = store.getState();
   console.log(stateObj);
 });
+
+// dispatch an action
+store.dispatch(incrementAction());
+store.dispatch(decrementAction());
+store.dispatch(incrementAction());
+// store.dispatch(resetAction());
+// dispatch action with payload
+store.dispatch(increaseByAmountAction(7));
+store.dispatch(increaseByAmountAction(7));
+store.dispatch(decrementAction());
