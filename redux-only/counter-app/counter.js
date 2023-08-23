@@ -40,5 +40,26 @@ const increaseByAmountAction = (increaseBy) => {
 };
 
 // Step 03: reducer
+const counterReducer = (state = initialState, action) => {
+  if (action.type === "INCREMENT") {
+    return {
+      count: state.count + 1,
+    };
+  } else if (action.type === "DECREMENT") {
+    return {
+      count: state.count - 1,
+    };
+  } else if (action.type === "RESET") {
+    return {
+      count: 0,
+    };
+  } else if (action.type === "INCREASE_BY_AMOUNT") {
+    return {
+      count: state.count + action.payload,
+    };
+  } else {
+    return state;
+  }
+};
 
 // Step 04: store
