@@ -18,13 +18,24 @@ const notesReducer = (state = initialState, action) => {
         title: action.payload.title,
         content: action.payload.content,
       };
+
+      // add note into localStorage
+      const updatedNotes = [...state.notes, newNote];
+      localStorage.setItem("notes", JSON.stringify(updatedNotes));
+
       return {
         notes: [...state.notes, newNote],
       };
 
+    case FETCH_NOTES:
+      return {
+        notes: JSON.parse(localStorage.getItem("notes"))
+          ? JSON.parse(localStorage.getItem("notes"))
+          : [],
+      };
+
     default:
       return state;
-      break;
   }
 };
 
