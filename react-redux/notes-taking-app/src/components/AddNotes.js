@@ -1,10 +1,12 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./Form.css";
+import { addNoteAction } from "../redux/actions/notesAction";
 
 const AddNotes = () => {
   //dispatch
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
+
   const [note, setNote] = useState({
     title: "",
     content: "",
@@ -23,6 +25,9 @@ const AddNotes = () => {
       return alert("Please fill in the form");
     }
     e.preventDefault();
+
+    // dispatch an action
+    dispatch(addNoteAction(note));
 
     // reset the inputs
     setNote({

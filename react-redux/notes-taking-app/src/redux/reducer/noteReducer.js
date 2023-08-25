@@ -14,12 +14,12 @@ const notesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_NOTE:
       const newNote = {
-        id: Math.random(),
+        id: Math.random().toFixed(6),
         title: action.payload.title,
         content: action.payload.content,
       };
       return {
-        notes: [...state, newNote],
+        notes: [...state.notes, newNote],
       };
 
     default:
