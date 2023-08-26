@@ -2,7 +2,9 @@ const {
   createAction,
   createReducer,
   configureStore,
+  getDefaultMiddleware,
 } = require("@reduxjs/toolkit");
+const logger = require("redux-logger").createLogger();
 
 // TODO: initialState
 const initialState = {
@@ -67,6 +69,7 @@ const counterSliceMapObjectNotation = createAction(initialState, {
 // TODO: Store
 const store = configureStore({
   reducer: counterSlice,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 
 // TODO: dispatch action
