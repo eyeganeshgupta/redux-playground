@@ -1,0 +1,8 @@
+export const FETCH_POSTS_REQUEST = "FETCH_POSTS_REQUEST";
+export const FETCH_POSTS_SUCCESS = "FETCH_POSTS_SUCCESS";
+export const FETCH_POSTS_ERROR = "FETCH_POSTS_ERROR";
+
+// ------- single post -------
+export const FETCH_POST_ERROR = "FETCH_POST_ERROR";
+export const FETCH_POST_REQUEST = "FETCH_POST_REQUEST";
+export const FETCH_POST_SUCCESS = "FETCH_POST_SUCCESS";
