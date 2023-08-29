@@ -43,8 +43,32 @@ export const postsReducer = (state = initialState, action) => {
         error: action.payload,
       };
 
+    // ==== fetch/search single post
+    case FETCH_POST_REQUEST:
+      return {
+        loading: true,
+        posts: [],
+        post: {},
+        error: "",
+      };
+
+    case FETCH_POST_SUCCESS:
+      return {
+        loading: false,
+        posts: [action.payload],
+        post: {},
+        error: "",
+      };
+
+    case FETCH_POST_ERROR:
+      return {
+        loading: false,
+        posts: [],
+        post: {},
+        error: action.payload,
+      };
+
     default:
       return state;
   }
 };
-
